@@ -82,6 +82,7 @@ var digestAuthRequest = function (method, url, username, password) {
 							key = digestHeaders[i].substring(0, equalIndex),
 							val = digestHeaders[i].substring(equalIndex + 1);
 						val = val.replace(/['"]+/g, '');
+						val = val.trim();
 						// find realm
 						if (key.match(/realm/i) != null) {
 							self.realm = val;
